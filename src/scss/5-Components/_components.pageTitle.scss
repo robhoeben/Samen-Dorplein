@@ -10,7 +10,7 @@
     @include mq(1000) {
         --offset-multiplier: 0.5;
     }
-    
+
     &::before {
         content: '';
         width: var(--border-w);
@@ -18,14 +18,14 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-color: palette(purple, 300, 0.3);    
-        background-color: palette(green);    
-    }   
+        background-color: palette(green);
+        border-radius: 2px;
+    }
 }
 
 
 .c-page-title__main {
-    @include h1;    
+    @include h1;
     color: palette(purple, 600);
     font-family: $font-primary;
 }

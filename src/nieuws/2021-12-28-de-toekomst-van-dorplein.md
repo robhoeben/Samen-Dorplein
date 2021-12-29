@@ -3,16 +3,16 @@ layout: article.njk
 title: De toekomst van Dorplein
 subtitle: Voor ons dorp, door ons dorp
 intro: We hebben ze allemaal wel gezien, de 'Wat als ...' banners langs de verschillende invalswegen van ons mooie dorp. Voorafgaand aan de toegevoegde vragen onderaan deze banners is er bij ieder Dorpleins huishouden een informative flyer in de brievenbus bezorgd. Middels de flyer heeft 'Samen Dorplein' zich voorgesteld aan het dorp, waarmee 'Samen Dorplein' haar initiatief een gezicht heeft gegeven. Dit gezicht bestaat uit zes Dorpleiners die bereid zijn om de kar te trekken. Verder is er uitgelegd wat het doel is van Samen Dorplein. Heb je dit gemist? Geen zorgen! We leggen het hier nogmaals uit.
-image: samen-puzzel.jpg
+image: missie-visie.jpg
 date: 2021-12-28
 ---
 
 
 #### Wat gaan we doen?
-Hoe denken wij, als inwoners, over de toekomst van ons dorp en wat hebben we daarvoor nodig? Dit toekomstbeeld gaan we maken, door met elkaar in gesprek te gaan over allerlei onderwerpen die er in Dorplein spelen. Woningbouw, recreatie, veiligheid en verkeer, zorg en welzijn, 
+Hoe denken wij, als inwoners, over de toekomst van ons dorp en wat hebben we daarvoor nodig? Dit toekomstbeeld gaan we maken, door met elkaar in gesprek te gaan over allerlei onderwerpen die er in Dorplein spelen. Woningbouw, recreatie, veiligheid en verkeer, zorg en welzijn,
 onderwijs, opgroeien én ouder worden in Dorplein. Met aandacht voor het behouden van de groene en natuurlijke uitstraling van ons dorp.
 Omdat we samen meer bereiken, hebben we al contact gelegd met de Dorpleinse verenigingen.
-Hoe meer mensen met ons meedoen, hoe sterker onze gezamenlijke visie wordt. 
+Hoe meer mensen met ons meedoen, hoe sterker onze gezamenlijke visie wordt.
 Dus… Elke mening telt, ook die van jou!
 
 #### Enquête
