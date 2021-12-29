@@ -64,3 +64,9 @@
 	border: 8px solid palette(yellow);
 	background: palette(yellow, 500, 0.1);
 }
+
+
+.u-break-line {
+	margin: clamp(#{space(4)}, 6vw, #{space(12)}) 0;
+	border-bottom: 1px solid palette(purple, 300, 0.5);
+}

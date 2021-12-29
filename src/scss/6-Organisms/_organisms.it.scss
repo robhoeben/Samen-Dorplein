@@ -2,7 +2,7 @@
     display: grid;
     grid-gap: space(4);
     grid-template-columns: auto;
-    grid-template-areas: "text" "image";
+    grid-template-areas: "image" "text" ;
 
     @include mq(700) {
         grid-gap: space(7);
