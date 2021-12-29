@@ -1,0 +1,7 @@
+.c-intro {
+    @include font-size(20,32);
+    padding: space(3);
+    color: palette(purple, 500);
+    border: 4px solid palette(blue);
+    border-radius: 8px;
+}

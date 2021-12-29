@@ -1,0 +1,18 @@
+
+/**
+ * Here we print out all our helper classes for our defined $font-weights map
+ * Output of the classes in the this form:
+
+   .u-fw-regular {}
+   .u-fw-semiBold {}
+   ... etc
+
+ */
+
+@if variable-exists(font-weights) {
+	@each $name, $size in $font-weights {
+		.u-fw-#{$name} {
+			@include font-weight($name);
+		}
+	}
+}

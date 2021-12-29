@@ -1,0 +1,54 @@
+
+.o-article-card {
+    padding: space(3) 0;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:nth-child(n+2){
+        border-top: 1px solid palette(purple, 300, 0.3);
+    }
+}
+
+
+.o-article-card__link {
+    --title-color: #{palette(purple, 500)};
+    --description-color: #{palette(neutral, 700)};
+
+    display: grid; 
+    grid-column-gap: space(2);
+    grid-template: auto auto / auto auto;
+    grid-template-areas: 
+        "title title" 
+        "description date";
+    text-decoration: none;
+
+    &:hover {
+        --title-color: #{palette(green)};
+        --description-color: #{palette(green)};
+    }
+}
+
+.o-article-card__title {
+    grid-area: title;
+    color: var(--title-color);
+    transition: all 100ms linear;
+}
+
+
+.o-article-card__description {
+    grid-area: description;
+    @include font-size(16,24);
+    color: var(--description-color);
+    transition: all 100ms linear;
+}
+
+
+.o-article-card__date {
+    grid-area: date;
+    @include font-size(13, 16);
+    color: palette(neutral, 500);
+    align-self: end;
+    justify-self: end;
+}

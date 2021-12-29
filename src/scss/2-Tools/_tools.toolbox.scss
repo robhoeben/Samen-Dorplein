@@ -1,0 +1,321 @@
+/** =====================================================================================
+ *  Toolbox functions
+ ===================================================================================== */
+
+
+/**
+ *  Maths helpers.
+ *  Halve and double numbers, returning rounded integers.
+
+    USAGE:
+
+    .demo {
+        padding: halve(30px);
+    }
+
+ */
+
+@use "sass:math";
+
+@function quarter($number) {
+	@return round($number * 0.25);
+}
+
+@function halve($number) {
+	@return round($number * 0.5);
+}
+
+@function double($number) {
+	@return round($number * 2);
+}
+
+@function triple($number) {
+	@return round($number * 3);
+}
+
+@function quadruple($number) {
+	@return round($number * 4);
+}
+
+
+
+/**
+ *  Remove the unit of a length
+ *  @param {Number} $number - Number to remove unit from
+ *  @return {Number} - Unitless number
+ */
+
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return math.div($number, $number * 0 + 1);
+	}
+	@return $number;
+}
+
+/**
+ * Add px to value
+ */
+
+@function px($number) {
+	@if type-of($number) == 'number' and unitless($number) {
+		@return $number * 1px;
+	}
+
+	@return $number;
+}
+
+
+/* Check if value is number */
+
+@function is-number($value) {
+	@return type-of($value) == 'number';
+}
+
+/* Value to Em */
+
+@function valueToRem($value) {
+	$noUnits: strip-unit($value);
+	@return #{math.div($noUnits, 16) * 1rem};
+}
+
+/* Value to Rem */
+
+@function valueToEm($value) {
+	$noUnits: strip-unit($value);
+	@return #{math.div($noUnits, 16) * 1em};
+}
+
+
+// Set a fixed space based on the 8pt grid
+// Just pass the function a number equal to the number of (8)points you need
+@function space($size: '1') {
+	@return 8px * $size;
+}
+
+
+
+/*
+ * Set vertical spacing only for mobile viewport
+
+ USAGE:
+
+ .demo {
+	 @include vspacing(
+		'margin-top' 1
+	 );
+  }
+
+ */
+
+@mixin vspacing($values...) {
+	@include mq($max: $bp-max) {
+		@each $i in $values {
+			#{nth($i, 1)}: #{columnVw(1, $site-columns) * nth($i, 2)};
+		}
+	}
+	// lock it in px values so it won't keep growing
+	@include mq($bp-max) {
+		@each $i in $values {
+			#{nth($i, 1)}: #{$site-column-size * nth($i, 2)}px;
+		}
+	}
+}
+
+
+/**
+ *	A simple function for setting a consistent border-radius
+
+	USAGE:
+
+	.card {
+		@include border-radius(s);
+	}
+
+	.card--alt {
+		@include border-radius((m,0,0,m));
+	}
+
+ */
+@mixin border-radius($radius: s) {
+	@if length($radius) != 1 {
+		$border-radius-val: null;
+
+		@each $val in $radius {
+			$i: index($radius, $val);
+			@if(type_of($val) == string) {
+				@if(map_has_key($border-radius,$val)) {
+					$border-radius-val: $border-radius-val map-get($border-radius, nth($radius, $i));
+				} @else {
+					@warn 'There is no key with value '#{$val}' in the $border-radius map';
+				}
+			} @else {
+				$border-radius-val: $border-radius-val $val;
+			}
+		}
+		border-radius: $border-radius-val;
+	}
+	@else {
+		border-radius: map-get($border-radius, $radius);
+	}
+}
+
+/**
+ * Lobotomized Owl Selector mixin:
+ * - Set spacing for consecutive items with margin-top on all but the first item
+
+	USAGE:
+
+	.demo {
+		@include owl-children;
+	}
+
+	.demo__item {
+		@include owl;
+	}
+
+ */
+
+
+
+// Gives the children of the element spacing
+@mixin owl-children($margin: #{$line-height-ratio}rem) {
+	& > *:nth-child(n+2) {
+		margin-top: $margin;
+	}
+}
+
+
+// Gives the element itself spacing
+@mixin owl($margin: #{$line-height-ratio}rem) {
+	&:nth-child(n+2) {
+		margin-top: $margin;
+	}
+}
+
+
+/**
+ *  Show hyphens for every browser supporting it
+ *  and will break lines in every other browser
+ */
+
+@mixin hyphenate {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+
+/*
+ *  Restrict an element to a max-width for creating gutters on the side
+ */
+@mixin contain($mq: null, $max: null) {
+	margin-left: auto;
+	margin-right: auto;
+
+	@if ($max == null) {
+		max-width: #{$site-max-width}px;
+
+		// if no argument is passed contain on all viewports
+		@if ($mq == null) {
+			width: calc((100% / #{$site-columns}) * #{$site-columns - 2});
+		} @else {
+			// if media query is passed use that in our mixin
+			@include mq($mq) {
+				width: calc((100% / #{$site-columns}) * #{$site-columns - 2});
+			}
+		}
+	}
+	@else {
+		@include mq($max: $max) {
+			width: calc((100% / #{$site-columns}) * #{$site-columns - 2});
+		}
+	}
+}
+
+
+/*
+ *  Restrict an element to a max-width with given number of columns offset
+ */
+@mixin restrict($columnsOffset: null) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc(#{$site-max-width}px - (#{$site-column-size}px * #{double($columnsOffset)}));
+	width: calc((100% / #{$site-columns}) * #{$site-columns - 2});
+}
+
+
+
+/*
+ *	A mixin to set elements to its own named grid-area
+ */
+
+@mixin template($elements...) {
+	@each $element in $elements {
+		&__#{$element} {
+			grid-area: $element;
+			display: block; // In IE grid items can't be inline
+		}
+	}
+}
+
+
+@mixin visually-hidden() {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+@mixin container-grid() {
+	display: grid;
+	grid-template-columns: var(--g-container-grid);
+
+	// Set all children in the middle column
+	& > * {
+		grid-column: main;
+	}
+}
+
+
+@mixin boxed($border-radius: m) {
+	@include border-radius($border-radius);
+	padding: space(3);
+	background-color: palette(neutral, 0);
+	box-shadow: 0 8px 24px 0 rgba(1,23,102,0.04);
+}
+
+
+@mixin reset-list {
+	margin-left: 0;
+	list-style: none;
+}
+
+
+/*
+ *  Restrict an element to a max-width
+ */
+ @mixin restrict($columnsOffset: 0) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc(#{$site-max-width}px - (#{$site-column-size}px * #{double($columnsOffset)}));
+}
+
+
+
+@mixin container-grid() {
+	display: grid;
+	grid-template-columns: var(--g-container-grid);
+
+	// Set all children in the middle column
+	& > * {
+		grid-column: main;
+	}
+}

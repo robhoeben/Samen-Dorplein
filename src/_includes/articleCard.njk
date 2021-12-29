@@ -1,0 +1,7 @@
+<article class="o-article-card">
+    <a class="o-article-card__link" href="{{ post.url }}">
+        <h3 class="o-article-card__title">{{ post.data.title }}</h3>
+        <p class="o-article-card__description">{{ post.data.subtitle }}</p>
+        <time class="o-article-card__date">{{ post.data.date | postDate }}<time>
+    </a>
+</article>

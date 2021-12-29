@@ -1,0 +1,35 @@
+@mixin h1 {
+	@include font-weight(bold);
+	font-size: clamp(32px, calc(20px + 2.5vw), 48px);
+	line-height: clamp(38px, calc(24px + 2.5vw), 52px);
+}
+
+@mixin h2 {
+	@include font-weight(bold);
+	font-size: clamp(20px, calc(12px + 2.2vw), 32px);
+	line-height: clamp(28px, calc(20px + 2.2vw), 48px);
+}
+
+@mixin h3 {
+	@include font-weight(bold);
+	font-size: clamp(18px, calc(10px + 1.5vw), 22px);
+	line-height: clamp(24px, calc(16px + 1.5vw), 28px);
+}
+
+@mixin h4 {
+	@include font-size(16,24);
+	@include font-weight(bold);
+}
+
+@mixin h5 {
+	@include font-size(12,16);
+	@include font-weight(bold);
+}
+
+
+h1, .h1 { @include h1; }
+h2, .h2 { @include h2; }
+h3, .h3 { @include h3; }
+h4, .h4 { @include h4; }
+h5, .h5,
+h6 { @include h5; }

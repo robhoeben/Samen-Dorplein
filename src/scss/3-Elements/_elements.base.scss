@@ -1,0 +1,120 @@
+/* ==========================================================================
+ * Basic elements (no class selectors allowed)
+ * ========================================================================== */
+
+/**
+ * Set up the html
+ *
+ * 1. Makes sure that some fonts are better rendered
+ * 2. Set font to lining figures
+ */
+ html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "lnum";
+  box-sizing: border-box;
+  height: 100%;
+  touch-action: manipulation; // disable double tap to zoom on iOS
+}
+
+body {
+  @include font-size(16,24);
+  position: relative;
+  font-family: $font-system;
+  margin: 0;
+  background-color: var(--g-bg-color);
+  color: var(--g-text-color);
+}
+
+
+/**
+ * [1] Make sure elements like input and textarea inherit some base properties
+ *     https://www.smashingmagazine.com/2016/11/css-inheritance-cascade-global-scope-new-old-worst-best-friends/
+ *
+ * [2] Setting box-sizing the best way per:
+ *     https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+* {
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+/**
+ * [1] Turn off text-shadow when selecting text for better readability
+ */
+::selection {
+  color: palette(neutral, 0);
+  background-color: palette(blue, 500);
+  text-shadow: none; /* [1] */
+}
+
+/* Remove default margin around figure
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * [1] Setting 'vertical-align' removes the whitespace that appears under 'img'
+ *	   elements when they are dropped into a page as-is. Safer alternative to
+ *	   using 'display: block;'.
+ * [2] Remove border / especially on older browsers
+ */
+img, svg {
+  vertical-align: middle; /*[1]*/
+  border: none; /*[2]*/
+  max-width: 100%;
+}
+
+/**
+ * Still add display block to svg and picture to prevent unwanted spacing or collapsing
+ */
+svg, picture {
+  display: block;
+}
+
+/**
+ *  Needed for iOS to prevent input zooming
+ *  https://uxcellence.com/2014/01/15/quick-fix-increase-font-size-to-16px-to-fix-input-zoom
+ */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+
+a {
+  color: palette(green, 500);
+  text-decoration-skip-ink: auto; // pretty underlining links
+
+  &:not([class]):hover { // Links with no class get a default hover
+    color: palette(purple, 500);
+  }
+}
+
+
+// TODO: Is this the right way to reset all margin??
+// Reset all top margins
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: palette(purple, 300, 0.5);
+}

@@ -1,0 +1,42 @@
+.l-button-group {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: space(-0.5) space(-2);
+
+	& > * {
+		margin: space(0.5) space(2);
+	}
+}
+
+
+.l-button-group--opposites {
+	justify-content: space-between;
+}
+
+
+.l-button-group--reverse {
+	flex-direction: row-reverse;
+}
+
+
+.l-button-group--dense {
+	margin-left: space(-1);
+	margin-right: space(-1);
+
+	& > * {
+		margin-left: space(1);
+		margin-right: space(1);
+	}
+}
+
+
+.l-button-group--roomy {
+	margin-left: space(-4);
+	margin-right: space(-4);
+
+	& > * {
+		margin-left: space(4);
+		margin-right: space(4);
+	}
+}

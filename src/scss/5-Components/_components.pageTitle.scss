@@ -1,0 +1,38 @@
+.c-page-title {
+    --offset-multiplier: 1;
+    --border-w: 8px;
+
+    margin-bottom: space(5);
+    padding-left: calc(var(--g-container-gutter) * var(--offset-multiplier));
+    margin-left: calc(var(--g-container-gutter) * calc(var(--offset-multiplier) * -1));
+    position: relative;
+
+    @include mq(1000) {
+        --offset-multiplier: 0.5;
+    }
+    
+    &::before {
+        content: '';
+        width: var(--border-w);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: palette(purple, 300, 0.3);    
+        background-color: palette(green);    
+    }   
+}
+
+
+.c-page-title__main {
+    @include h1;    
+    color: palette(purple, 600);
+    font-family: $font-primary;
+}
+
+
+.c-page-title__sub {
+    @include h3;
+    @include font-weight(regular);
+    color: palette(purple, 500);
+}

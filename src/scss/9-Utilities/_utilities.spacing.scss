@@ -1,0 +1,19 @@
+@for $i from 0 through 16 {
+	// Margin (negative)
+	//.u-spacing-mt#{$i}-    { margin-top: 	space(-$i) !important; }
+	//.u-spacing-mb#{$i}-    { margin-bottom: space(-$i) !important; }
+
+	// Margin (positive)
+	.u-spacing-m#{$i}      { margin: 	    space($i) !important; }
+	.u-spacing-mt#{$i}     { margin-top: 	space($i) !important; }
+	.u-spacing-mr#{$i}     { margin-right: 	space($i) !important; }
+	.u-spacing-mb#{$i}     { margin-bottom: space($i) !important; }
+	.u-spacing-ml#{$i}     { margin-left: 	space($i) !important; }
+
+	// Padding
+	.u-spacing-p#{$i}      { padding: 		space($i) !important; }
+	.u-spacing-pt#{$i}     { padding-top: 	space($i) !important; }
+	.u-spacing-pr#{$i}     { padding-right: space($i) !important; }
+	.u-spacing-pb#{$i}     { padding-bottom:space($i) !important; }
+	.u-spacing-pl#{$i}     { padding-left: 	space($i) !important; }
+}

@@ -1,0 +1,11 @@
+.c-title {
+	@include h2;
+	@include font-weight(extra-bold);
+	font-family: $font-primary;
+	color: palette(purple);
+}
+
+.c-subtitle {
+	@include h4;
+	color: palette(green, 500);
+}

@@ -1,0 +1,39 @@
+---
+layout: master.njk
+hidePageTitle: true
+title: Samen Dorplein
+subtitle: Samen werken aan een toekomstbestendig Dorplein
+eleventyNavigation:
+    key: Home
+---
+
+{% from "macros/button.njk" import button %}
+
+<div class="l-container-grid">
+    <div class="l-split  l-split--3-2">
+        <div class="">
+            {% include 'pageTitle.njk' %}
+
+            <div class="s-text  u-spacing-mt3">
+                <p>Hoe denken wij, als inwoners, over de toekomst van ons dorp en wat hebben we daarvoor nodig? Die vraag gaan we samen met jou de komende tijd beantwoorden. We willen samen werken aan een toekomstbestendig Dorplein waarin we we samen wonen en samen plezier hebben.</p>
+
+                {{ button(
+                    label = 'Wie zijn wij',
+                    href = '/over-ons',
+                    hasIcon = true,
+                    isGhost = true
+                ) }}
+            </div>        
+        </div>
+        <div class="u-image-wrapper">
+            {% image ["./src/img/toekomst-visie.jpg"] | join, '', '(min-width: 30em) 50vw, 100vw' %}    
+        </div>
+    </div>  
+
+
+    <hr class="u-spacing-mt8 u-spacing-mb8">
+
+
+    {% include "latestNews.njk" %}
+    
+</div>

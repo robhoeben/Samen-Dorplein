@@ -1,0 +1,33 @@
+/* ============================================
+   Define breakpoints for given formats
+   ============================================ */
+
+// Default breakpoint
+$breakpoints: (
+  s: 384,
+  m: 840,
+  l: 1152
+);
+
+$bp-header-switch: 800;
+$bp-footer-1: 740;
+$bp-footer-2: 900;
+$bp-footer-3: 1236;
+$bp-footer-4: 1410;
+$bp-product-row-switch: 816;
+$bp-product-detail-switch: 900;
+$bp-layout-menu: 1000;
+$bp-cart-switch: 900;
+$bp-form-switch: 574;
+$bp-sidemenu-switch: 1000;
+
+
+$bp-service-tiles-grid-4: 1180;
+
+$bp-service-tiles-mobile-4: 760;
+$bp-service-tiles-mobile-3: 930;
+$bp-service-tiles-mobile-2: 800;
+
+// ------------------------------------------------------------------------
+// Calculate viewport size when container can't grow anymore
+$bp-max: ($site-columns * $site-column-size) + 17; // 17px estimate for average scrollbar width

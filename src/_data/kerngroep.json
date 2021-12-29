@@ -1,0 +1,46 @@
+{
+    "persons": [
+        {
+            "introName": "Mijn naam is",
+            "name": "John Claassen",
+            "image": "john.jpg",
+            "punctuation": ".",
+            "description": "Ik woon en geniet al praktisch mijn hele leven in en van Dorplein. Om dit anderen in de toekomst ook te gunnen, wil ik graag mijn steentje bijdragen aan ons dorp."
+        },
+        {
+            "introName": "Mijn naam is",
+            "name": "Evy Hoeben",
+            "punctuation": ".",
+            "image": "evy.jpg",
+            "description": "10 jaar geleden heb ik mijn thuis gevonden in Dorplein. Samen met Rob en onze kinderen Emma en Pim hoop ik hier ook onze toekomst kleur te geven."
+        },
+        {
+            "introName": "Mijn naam is",
+            "name": "Ingrid Schulte",
+            "punctuation": ",",
+            "image": "ingrid.jpg",
+            "description": "ben getrouwd en we hebben 2 jongens van 8 en 12 jaar. Ik woon intussen al 14 jaar met heel veel plezier aan de Theo Stevenslaan in Dorplein."
+        },
+        {
+            "introName": "Mijn naam is",
+            "name": "Theo Dubbeld",
+            "punctuation": ",",
+            "image": "theo.jpg",
+            "description": "woon sinds 3 jaar in Dorplein samen met Inge en onze 2 honden. Ik werk graag mee aan de toekomst van Dorplein."
+        },
+        {
+            "introName": "Mijn naam is",
+            "name": "Henk Hoeben",
+            "punctuation": ",",
+            "image": "henk.jpg",
+            "description": "woon nu 69 jaar in Dorplein waar ik ook geboren ben. Ik ben al ruim 30 jaar actief op het gebied van leefbaarheid in ons dorp."
+        },
+        {
+            "introName": "Mijn naam is",
+            "name": "Saskia Scheffers",
+            "punctuation": ",",
+            "image": "saskia.jpg",
+            "description": "woon met mijn man Jos en twee dochters Fenne en Gwen op de Stationsweg. Dorpleiners in hart en nieren."
+        }
+    ]
+}  

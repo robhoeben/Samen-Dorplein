@@ -1,0 +1,30 @@
+.o-it {
+    display: grid;
+    grid-gap: space(4);
+    grid-template-columns: auto;
+    grid-template-areas: "text" "image";
+
+    @include mq(700) {
+        grid-gap: space(7);
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas: "text image";
+    }
+}
+
+
+.o-it--reversed {
+    @include mq(700) {
+        grid-template-areas: "image text";
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+
+.o-it__image {
+    grid-area: image;
+}
+
+
+.o-it__text {
+    grid-area: text;
+}

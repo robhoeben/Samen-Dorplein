@@ -1,0 +1,12 @@
+$spriteWidth: 100px;
+$spriteHeight: 85px;
+
+@mixin sprite($position, $width: auto, $height: auto) {
+  $positionX: nth($position, 1) * -1;
+  $positionY: nth($position, 2) * -1;
+
+  background: url("/img/komma_sprite.svg") $positionX $positionY no-repeat;
+  background-size: $spriteWidth $spriteHeight;
+  width: $width;
+  height: $height;
+}

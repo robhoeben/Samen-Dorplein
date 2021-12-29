@@ -1,0 +1,51 @@
+/*
+* If you need to make a quick fix, you can do it here.
+* Later when you have the time, you can move the fix into the correct place in the structure
+*/
+
+// ----------------------------
+// Nothing here yet, Good job!!
+
+
+.x-body {
+    margin: 0;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'MuseoModerno', cursive;
+    color: #412A66;
+}
+
+
+.x-main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.x-logo {
+    width: auto;
+    height: auto;
+    max-height: 70vmin;
+    margin: 0 auto;
+}
+
+
+// .x-title { 
+//     font-size: 4em; 
+//     line-height: 1;
+//     text-align: center;
+//     margin: 0 auto;
+
+//     span:nth-child(1) {
+//         font-weight: 600;
+//     }
+
+//     span:nth-child(2) {
+//         font-weight: 300;
+//     }
+// }
+

@@ -1,0 +1,84 @@
+
+/*  1 - SETTINGS
+ *  Global variables, site-wide settings,
+ *  config switches etc.
+ *
+ *  The order in which these Sass files
+ *  are loaded is critical!
+ *  So please be careful when editing
+  =========================================================== */
+
+  @import '1-Settings/settings';
+
+
+
+  /*  2 - TOOLS
+   *  Site wide mixins and functions
+   =========================================================== */
+  
+  @import '2-Tools/tools';
+  
+  
+  
+  /*  3 - ELEMENTS
+   *  Plain old simple HTML elements without a class (type selectors)
+   =========================================================== */
+  
+  @import '3-Elements/elements';
+  
+  
+  
+  /*  4 - Layout elements
+   *  Design patterns (e.g. grids or media object)
+   =========================================================== */
+  
+  @import '4-Layouts/layouts';
+  
+  
+  
+  /*  5 - COMPONENTS
+   *  Discrete complete chunks of UI.
+   *  Designed components
+   =========================================================== */
+  
+  @import '5-Components/components';
+  
+  
+  
+  /*  6 - ORGANISMS
+   *  Large blocks composed of multiple components.
+   =========================================================== */
+  
+  @import "6-Organisms/organisms";
+  
+  
+  
+  /*  7 - Templates
+   *  Override styling for a specific template
+   =========================================================== */
+  
+  @import '7-Templates/templates';
+  
+  
+  
+  /*  8 - SCOPES
+   *  Elements and classes that are scoped by a parent class
+   =========================================================== */
+  
+  @import '8-Scopes/scopes';
+  
+  
+  
+  /*  9 - UTILITIES
+   *  High-specificity, very explicit selectors.
+   *  Overrides and helper classes.
+   =========================================================== */
+  
+  @import '9-Utilities/utilities';
+  
+  
+  
+  /*  10 - ANIMATIONS
+   =========================================================== */
+  
+  @import '10-Animations/animations';

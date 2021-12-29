@@ -1,0 +1,25 @@
+{% macro button(label, href, isGhost, isText, hasBackIcon, hasIcon) -%}
+
+  {% set hasIconClass = "has-icon" if (hasIcon or hasBackIcon) %}
+  {% set ghostClass = 'c-button--ghost' if isGhost %}
+  {% set textClass = 'c-button--text' if isText %}
+
+  <a class="c-button {{ghostClass}} {{textClass}} {{hasIconClass}}" 
+      href="{{href}}" 
+      {% if hasBackIcon %} data-icon-pos="before" {% endif %}
+      >
+        <span class="c-button__text">{{ label }}</span>
+      
+        {% if (hasIcon or hasBackIcon) %}
+          <span class="c-button__icon">
+          {% if hasIcon %}
+            {% include "svg/arrowHeadRight.njk" %}
+          {% endif %}
+          {% if hasBackIcon %}
+            {% include "svg/arrowHeadLeft.njk" %}
+          {% endif %}
+          </span>
+        {% endif %}
+  </a>
+
+{% endmacro %}

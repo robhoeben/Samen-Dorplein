@@ -1,0 +1,21 @@
+---
+layout: master.njk
+title: Nieuws
+subtitle: De ontwikkelingen omtrent Samen Dorplein
+eleventyNavigation:
+    key: Nieuws
+---
+    
+<div class="l-container-grid">
+    
+    <div class="l-split  l-split--3-2  u-spacing-mt5">
+         <div class="o-articles">
+            {% for post in collections.nieuws | reverse %}
+                {% include 'articleCard.njk' %}
+            {% endfor %}
+        </div>
+        <div class="u-image-wrapper">
+            {% image ["./src/img/ontwikkeling.jpg"] | join, '', '(min-width: 30em) 50vw, 100vw' %}    
+        </div>
+    </div>
+</div>

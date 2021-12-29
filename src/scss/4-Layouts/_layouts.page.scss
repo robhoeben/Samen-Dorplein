@@ -1,0 +1,26 @@
+// .l-page needs to be on the body element
+.l-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: var(--g-text-color);
+  background-color: var(--g-bg-color);
+}
+
+
+.l-page__header {
+  position: relative;
+}
+
+
+.l-page__body {
+  position: relative;
+  flex: 1 0 auto;
+
+  padding: 2vw 0;
+}
+
+
+.l-page__footer {
+  position: relative;
+}

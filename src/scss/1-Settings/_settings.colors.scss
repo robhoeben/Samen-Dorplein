@@ -1,0 +1,49 @@
+/* =========================================================
+   Organize color variables in a Sass Map.
+   This way, the colors can be iterated, are more organized,
+   and are more intuitive to reference.
+   ========================================================= */
+
+$palettes: (
+	'neutral': (
+		0:   hsl(204, 10%, 100%),
+		100: hsl(204, 10%, 95%),
+		200: hsl(204, 10%, 89%),
+		300: hsl(204, 10%, 80%),
+		500: hsl(204, 10%, 65%),
+		700: hsl(204, 10%, 25%),
+		800: hsl(204, 10%, 18%),
+		900: hsl(204, 10%, 12%),
+		),
+	'purple': (
+		300: hsl(263, 21%, 64%),
+		400: hsl(263, 20%, 52%),
+		500: hsl(263, 42%, 28%),
+		600: hsl(260, 43%, 23%),
+		800: hsl(260, 43%, 19%),
+		900: hsl(260, 43%, 8%),
+		),
+	'green': (
+		300: hsl(155, 55%, 67%),
+		500: hsl(155, 55%, 46%),
+		700: hsl(155, 55%, 34%),
+	),
+	'blue': (
+		500: hsl(195, 89%, 60%),
+	),
+	'yellow': (
+		500: hsl(49, 93%, 65%),
+	),
+
+);
+
+// Convert a hex value to comma-delimited hsl values
+// In: #000
+// Out: 0,0,0
+@function derive-hsl-values($color) {
+	@return hue($color), saturation($color), lightness($color);
+}
+
+@function palette($name, $level: 500, $alpha: 1) {
+	@return hsla(var(--color-#{$name}-#{$level}-hsl), $alpha);
+}

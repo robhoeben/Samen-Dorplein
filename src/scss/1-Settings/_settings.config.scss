@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+
+// ---------------------------------------------------------
+// The default border-radius values used in the border mixin
+
+$border-radius: (
+  s: 4px,
+  m: 6px,
+  l: 12px,
+  xl: 36px
+);
+
+
+
+// --------------------------------------------------------
+// Column settings
+
+$site-gutter-min:       16px;
+$site-gutter-max:       6vw;
+
+$site-columns:          12;
+$site-column-size:      94;
+
+$site-max-width: $site-column-size * $site-columns;
+
+
+// --------------------------------------------------------
+// Other settings
+
+
+$site-cookieBar-height: 64px; // Fixed size so we can offset padding-bottom on the body
+$site-cookieBar-transition-speed: 600ms; // Speed of the disappear animation
+$site-cookieBar-transition-ease: ease-in-out; // Easing of the disappear animation
+

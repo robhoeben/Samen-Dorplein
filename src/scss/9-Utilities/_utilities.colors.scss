@@ -1,0 +1,40 @@
+/** =====================================================================================
+ *  Color
+ ===================================================================================== */
+
+
+/**
+ * Here we print out all our helper classes for our defined colors
+ * Based on these articles:
+ * - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ * - https://blog.atechmedia.com/css-for-multiple-themes/
+ * Output is in the form of:
+
+   .u-color-primary {
+      color: #bada55;
+   }
+
+  .u-bg-neutral--dark {
+    background-color: #decaff;
+  }
+ */
+
+@each $level, $palette in $palettes {
+	@each $type, $color in $palette {
+		@if($type == 'base'){
+			.u-color-#{$level} {
+				color: #{$color};
+			}
+			.u-bg-#{$level} {
+				background-color: #{$color};
+			}
+		} @else {
+			.u-color-#{$level}--#{$type} {
+				color: #{$color};
+			}
+			.u-bg-#{$level}--#{$type} {
+				background-color: #{$color};
+			}
+		}
+	}
+}

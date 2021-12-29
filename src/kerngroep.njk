@@ -1,0 +1,29 @@
+---
+layout: master.njk
+title: Kerngroep
+eleventyNavigation:
+    key: Kerngroep
+    parent: Over ons
+---
+    
+<div class="l-container-grid">    
+
+    <ul class="o-team">
+    {% for person in kerngroep.persons %}
+        <li class="o-team__item">
+            <div class="o-team__square"><span></span></div>
+            <div class="o-team__photo">
+                {% image ["./src/img/kerngroep/", person.image] | join, person.name, '(min-width: 30em) 50vw, 100vw' %}    
+            </div>
+            <div class="o-team__content">
+                <p>
+                    <span class="o-team__intro-name">{{ person.introName }}</span>
+                    <span class="o-team__name">{{ person.name }}{{ person.punctuation }}</span>
+                </p>
+                <p class="o-team__description">{{ person.description }}</p>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+
+</div>

@@ -1,0 +1,61 @@
+/* ==========================================================================
+ * Font related functions
+ * ========================================================================== */
+
+
+/**
+ *  Mixin for setting font-size in REM while giving it a pixel value
+
+    USAGE:
+
+    .myClass {
+        @include font-size(24, 14);
+    }
+
+ */
+
+
+@use "sass:math";
+
+@mixin font-size($fs, $lh: null) {
+  // Calculate if number-value was given and return REM value
+  @if is-number($fs) {
+    font-size: valueToRem($fs);
+  }
+  @else {
+    @warn " `#{$fs}` must be a number value to be valid.";
+  }
+  @if $lh != null and is-number($lh) and is-number($fs) {
+    line-height: math.div(strip-unit($lh), strip-unit($fs));
+  }
+}
+
+
+/**
+ *  Mixin for setting font-weight through a Sass Map with all available weights
+
+    USAGE:
+
+    .myClass {
+        @include font-weight(bold);
+    }
+
+
+    .myClass {
+        @include font-weight(bold);
+    }
+
+ */
+@mixin font-weight($weight) {
+  @if map-get($font-weights, $weight) {
+    @include font-weight(map-get($font-weights, $weight));
+  }
+  @else {
+    @if is-number($weight) {
+      font-weight: $weight;
+    }
+    @else {
+      @warn 'Given value: `#{$weight}` is not an option as font-weight in settings';
+    }
+  }
+}

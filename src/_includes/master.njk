@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" 
+          content="{{ site.description }}">
+    <title>{{ title }} | {{ site.name }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    {# <script src="./js/index.js"></script> #}
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#321f53">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="l-page">
+    <header class="l-page__header">
+        {% include 'header.njk' %}
+    </div>
+
+    <main class="l-page__body">
+        {% if not hidePageTitle %}
+        <div class="l-container-grid">
+            {% include 'pageTitle.njk' %}
+        </div>
+        {% endif %}
+        
+        {{ content | safe }}
+    </main>
+
+    <footer class="l-page__footer">
+        {% include 'footer.njk' %}
+    </footer>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;500;700;800&display=swap" rel="stylesheet"> 
+
+</body>
+</html>

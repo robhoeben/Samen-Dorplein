@@ -1,0 +1,94 @@
+---
+layout: master.njk
+title: Over ons
+subtitle: Wie zijn we en wat gaan we doen?
+eleventyNavigation:
+    key: Over ons
+---
+    
+<div class="l-container-grid">   
+    <div class="o-it  u-spacing-mt5">
+        <div class="o-it__text  s-text">
+            <h4>Wie zijn wij?</h4>
+            <p>Wij zijn de werkgroep ‘Samen Dorplein’: een enthousiaste groep inwoners, die samen met jou wil nadenken over de toekomst van ons mooie dorp.</p>
+            
+            <h4>Wat gaan we doen?</h4>
+            <p>We gaan samen een visie maken voor Dorplein. Hoe denken wij, als inwoners, over de toekomst van ons dorp en wat hebben we daarvoor nodig? 
+            Dit toekomstbeeld gaan we maken, door met elkaar in gesprek te gaan over allerlei onderwerpen die er in Dorplein spelen. Woningbouw, recreatie, veiligheid en verkeer, zorg en welzijn, 
+            onderwijs, opgroeien én ouder worden in Dorplein. Met aandacht voor het behouden van de groene en natuurlijke  weuitstraling van ons dorp.
+            Omdat we samen meer bereiken, hebben we al contact gelegd met de Dorpleinse verenigingen.
+            Hoe meer mensen met ons meedoen, hoe sterker onze gezamenlijke visie wordt. 
+            Dus… Elke mening telt, ook die van jou!</p>
+
+            <h4>Heb je een vraag?</h4>
+            <p>
+                Stel deze aan een van de kerngroep-leden of stuur ons een <a href="mailto:info@samendorplein.nl">e-mail</a>.
+            </p>
+
+            {% from "macros/button.njk" import button %}
+
+            {{ button(
+                label = 'Maak kennis met onze kerngroep',
+                href = '/kerngroep',
+                hasIcon = true,
+                isGhost = true
+            ) }}
+        </div>
+        <div class="o-it__image  u-image-wrapper">
+            {% image ["./src/img/verrekijker.jpg"] | join, '', '(min-width: 30em) 50vw, 100vw' %}    
+        </div>
+    </div>
+
+    <hr class="u-spacing-mt12">
+
+    <div class="o-it  o-it--reversed  u-spacing-mt12">
+        <div class="o-it__image  u-image-wrapper">
+            {% image ["./src/img/samen-puzzel.jpg"] | join, '', '(min-width: 30em) 50vw, 100vw' %}                
+        </div>
+        <div class="o-it__text  s-text">
+            <h4>Samen Dorplein</h3>
+            <p>
+            Hoe kwamen we tot de naam ‘Samen Dorplein’? <br>
+            Afgelopen zomer kwamen we met het idee van “de grote puzzel”. Hiermee hebben we een oproep gedaan aan zo veel mogelijk mensen in Dorplein om met ons mee te denken hoe we van alle kleine puzzelstukjes (denk aan de basisschool, woningbouw, het gemeenschapshuis, recreatie en natuur,…) een grote puzzel kunnen maken. Die grote puzzel zou gericht zijn op de leefbaarheid en de toekomst van Dorplein. Van daaruit zijn we gestart met een ruime groep inwoners die zich hiervoor wil gaan inzetten.
+            </p>
+            <h4>Kernwoorden</h4>
+            <p>
+            Kernwoorden die voor ons belangrijk zijn: <em>visie, samenhorigheid, diversiteit, wonen, groen, Oud & Nieuw Dorplein, transparant, leefbaarheid, toekomst</em>,… maar vooral dat we het samen willen doen, vandaar <strong>Samen Dorplein</strong>. Vanuit die kernwoorden is er een logo gemaakt.
+            </p>
+        </div>
+    </div>
+
+    <hr class="u-spacing-mt12">
+
+    <div class="o-it  u-spacing-mt12">
+        <div class="o-it__image">
+            <img src="/img/svg/logo-on-light.svg" alt="Logo Samen Dorplein" width="180">
+        </div>
+        <div class="o-it__text  s-text">
+           
+            <h4>Logo</h4>
+            <p>
+            De boom in het logo staat centraal voor wonen in het groen. De takken symboliseren de verschillende generaties.
+            </p>
+            <p>
+            Met de twee huisjes, hetzelfde maar toch in een andere kleur, willen we de diversiteit laten zien van ons dorp. Maar ook de samenhorigheid. Ze representeren Oud & Nieuw Dorplein.
+            De ramen in de huisjes staan voor de visie, transparant zijn en kijken naar de toekomst.
+            </p>
+            <p>
+            Het hele logo samen vormt een groot huis, dit staat voor wonen en de samenhorigheid. <br>
+            Alle kleine stukjes vormen samen een grote puzzel, juist hetgeen van waaruit we vertrokken zijn als groep.
+            </p>
+            <p>
+            Ook de kleuren van het logo zijn weloverwogen. Zo staat paars voor samenhorigheid, collectief en met elkaar. Met blauw duiden we op de toekomst, mogelijkheden en perspectief. Geel laat zien dat we een groep zijn die productief, energiek en vitaal te werk gaat. En groen staat natuurlijk voor de natuur in ons dorp, maar ook voor leefbaarheid en hoop voor de toekomst.
+            </p>
+            <p>
+                Je kunt de presentatie van de naam en het logo ook <a href="/docs/presentatie_naam_en_logo.pdf" download>downloaden.</a>
+            </p>
+        </div>  
+    </div>
+     
+    <hr class="u-spacing-mt12 u-spacing-mb6">
+
+    {% include "latestNews.njk" %}
+
+</div>

@@ -1,0 +1,98 @@
+/**
+ * All text elements that can be added by the user through a CMS
+ */
+
+
+.s-text {
+
+	h1, h2, h3, h4 {
+		color: palette(purple, 500);
+	}
+
+	// First the owl selector for setting a default vertical rhythm
+	& > p + p,
+	& > * + h2,
+	& > * + h3,
+	& > * + h4 {
+		margin-top: clamp(#{space(2)}, calc(#{space(1)} + 4vw), #{space(3)});
+	}
+
+	& > * + a {
+		margin-top: clamp(#{space(3)}, calc(#{space(2)} + 4vw), #{space(5)});
+	}
+
+	// Make sure first item in scoped text has no margin on top
+	& > :first-child {
+		margin-top: 0 !important;
+	}
+
+	& > ul:not([class]) {
+		list-style: none;
+
+		& > li {
+			position: relative;
+			margin-left: -1.125em;
+			padding-left: calc(1.125em + #{space(1)});
+
+			&::before {
+				@include font-size(20,28);
+				content: "\2022";
+				position: absolute;
+				top: -3px;
+				left: 0;
+				opacity: 0.75;
+				color: palette(purple, 600);
+			}
+		}
+	}
+
+	& ol:not([class]) {
+		list-style: none;
+		counter-reset: ol-counter;
+		margin-left: 0;
+
+		& > li {
+			display: block;
+
+			h4 {
+				margin-top: space(4);
+			}
+
+			// nested ol
+			ol {
+				margin-top: space(1);
+				margin-left: -1.125em;
+				padding-left: calc(1.125em + #{space(1)});
+			}
+
+			ul {
+				padding-left: 1.125em;
+			}
+
+			&::before {
+				@include font-weight(bold);
+				content: counters(ol-counter, ".") " ";
+				counter-increment: ol-counter;
+				text-align: right;
+				float: left;
+				padding-right: 8px;
+			}
+		}
+	}
+}
+
+
+.s-text--on-dark {
+	color: palette(neutral, 0);
+
+	h1, h2, h3, h4 {
+		color: palette(neutral, 0);
+	}
+}
+
+
+.s-text--larger {
+	p {
+		@include font-size(20,40);
+	}
+}

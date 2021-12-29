@@ -1,0 +1,27 @@
+/** =================================================================================================
+ *  The 'z-index-map' is used for managing the elements stacking order in the 'root' stacking context
+ *  This way we have a overview of all the z-index values that are used across the project.
+ ==================================================================================================== */
+
+
+$z-index: (
+	z-visible-grid:				10000,
+	z-overlay-menu:				300,
+	z-layout-menu:				290,
+	z-modal:		 			200,
+	z-search-expand:		    101,
+	z-search-expand-backdrop:   100,
+	z-cookie:		 			10,
+);
+
+
+/**
+    USAGE:
+
+    @include z(z-modal);
+
+ */
+
+@mixin z($label) {
+	z-index: map-get($z-index,$label);
+}

@@ -1,0 +1,50 @@
+$c-pagination-text-color: palette(purple, 500);
+
+.c-pagination {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 list-style: none;
+	 margin-left: 0;
+ }
+
+.c-pagination__item {
+	@include font-size(14,24);
+	@include font-weight(regular);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $c-pagination-text-color;
+}
+
+.c-pagination__link {
+	@include border-radius;
+	padding: space(1);
+	color: $c-pagination-text-color;
+	text-decoration: none;
+	transition: color 150ms, background-color 150ms;
+
+	&:link:hover {
+		color: palette(purple, 500);
+		background: transparent;
+	}
+
+	&.is-break {
+		cursor: default;
+	}
+
+	&.is-prev,
+	&.is-next {
+		display: flex;
+		justify-content: center;
+		padding: space(1);
+		color: palette(neutral, 800);
+		transition: color 0.2s;
+	}
+
+	.is-active.c-pagination__item & {
+		@include font-weight(bold);
+		color: palette(neutral, 800);
+		cursor: default;
+	}
+}

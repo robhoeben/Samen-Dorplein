@@ -1,0 +1,157 @@
+.c-button {
+	--transition-duration: 150ms;
+	--animation-timing: cubic-bezier(.22,.61,.36,1);
+	--text-color: #{palette(neutral,0)};
+	--icon-color: var(--text-color);
+	--bg-color: #{palette(purple,600)};
+	--border-color: var(--bg-color);
+	--border-size: 2px;
+	--padding-v: #{space(1.5)};
+	--padding-h: #{space(3)};
+	--text-decoration: none;
+	--side-gap: calc(var(--padding-h) - var(--border-size));
+
+	@include template(icon, text);
+	@include font-size(15,24);
+	@include font-weight(bold);
+	@include border-radius(m);
+
+
+	display: inline-grid;
+	grid-template-areas: "text";
+	grid-template: auto / auto;
+	align-items: center;
+	position: relative;
+	padding: calc(var(--padding-v) - var(--border-size)) calc(var(--padding-h) - var(--border-size));
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	border: var(--border-size) solid var(--border-color);
+
+	text-decoration: var(--text-decoration);
+	cursor: pointer;
+	-webkit-appearance: none;
+	transition: all var(--transition-duration) var(--animation-timing);
+
+	&.has-icon {
+		grid-template-areas: "text icon";
+		grid-template-columns: auto auto;
+		grid-column-gap: space(1);
+
+		// When data attribute is set change direction
+		&[data-icon-pos="before"] {
+			grid-template-areas: "icon text";
+		}
+	}
+
+	&:hover:not(:disabled) {
+		--bg-color: #{palette(blue)};
+		--text-color: #{palette(purple)};
+	}
+
+	&:active:not(:disabled) {
+		--bg-color: #{palette(blue)};
+		--text-color: #{palette(purple)};
+		outline: none;
+		box-shadow: none !important;
+	}
+
+	&:focus:not(:disabled) {
+		--bg-color: #{palette(blue)};
+		--text-color: #{palette(purple)};
+		--text-decoration: underline;
+		outline: none;
+	}
+
+	&:disabled {
+		--bg-color: #{palette(neutral,300)};
+		--text-color: #{palette(purple)};
+		cursor: not-allowed;
+		user-select: none;
+	}
+
+	// smaller than 400 we need to shrink the padding to fit more of the text
+	@include mq($max: 400) {
+		--padding-h: #{space(4)};
+	}
+
+	// when smaller than most iPhones we shrink buttons some more
+	@include mq($max: 375) {
+		@include font-size(13, 16);
+		--padding-h: #{space(3)};
+	}
+}
+
+
+.c-button__icon {
+	color: var(--icon-color);
+	height: space(3);
+	width: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color var(--transition-duration) var(--animation-timing);
+
+	svg {
+		width: auto;
+		height: 12px;
+	}
+}
+
+
+
+// GHOST modifier
+// -- for transparent button with only border, no background
+
+.c-button--ghost {
+	--text-color: #{palette(purple,500)};
+	--border-color: #{palette(purple,300)};
+	--bg-color: transparent;
+
+	&:active:not(:disabled),
+	&:focus:not(:disabled),
+	&:hover:not(:disabled) {
+		--border-color: #{palette(purple)};
+		--bg-color: #{palette(purple)};
+		--text-color: #{palette(neutral, 0)};
+	}
+}
+
+
+.c-button--green {
+	--border-color: #{palette(green)};
+	--bg-color: #{palette(green)};
+
+	&:active:not(:disabled),
+	&:focus:not(:disabled),
+	&:hover:not(:disabled) {
+		--border-color: #{palette(purple)};
+		--bg-color: #{palette(purple)};
+	}
+}
+
+
+// TEXT Modifier
+// -- for simple button with no background or border, just text
+.c-button--text {
+	--text-color: #{palette(purple)};
+	--bg-color: transparent !important;
+	--border-size: 0;
+	--padding-v: 0;
+	--padding-h: #{space(1)};
+	--side-gap: 0;
+
+	@include font-weight(regular);
+
+	&:hover:not(:disabled) {
+		--text-color: #{palette(green, 500)};
+	}
+
+	&:focus:not(:disabled) {
+		--text-color: #{palette(green, 500)};
+	}
+}
+
+
+.c-button--small {
+	--padding-v: #{space(1.5)};
+}

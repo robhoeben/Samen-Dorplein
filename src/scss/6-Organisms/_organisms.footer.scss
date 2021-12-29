@@ -1,0 +1,91 @@
+.o-footer {
+    --border-size: 16px;
+    --padding-v: #{space(3)};    
+
+    @include container-grid;
+    // background-color: palette(neutral, 0);
+    // border-top: 1px solid palette(purple, 300, $alpha: 0.3); 
+    margin-top: space(5);
+    padding: var(--padding-v) 0 calc(var(--padding-v) + var(--border-size));
+    position: relative;
+    color: palette(neutral, 500);
+
+    // boom
+    @include mq(960){
+        &::before {
+            content: '';
+            width: space(5);
+            height: space(8);
+            position: absolute;
+            bottom: var(--border-size);
+            left: space(2);
+            background-image: url(/img/svg/boom.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &:after {
+        --w: max(32px, 10vw);
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: var(--border-size);
+        width: 100%;
+        background-image: linear-gradient(
+            to right, 
+            palette(purple) calc(100% - calc(var(--w) * 3)),
+            palette(blue) calc(100% - calc(var(--w) * 3)),
+            palette(blue) calc(100% - calc(var(--w) * 2)),
+            palette(yellow) calc(100% - calc(var(--w) * 2)),
+            palette(yellow) calc(100% - var(--w)),
+            palette(green) calc(100% - var(--w)),
+            palette(green) 100%,
+        );
+    }
+}
+
+
+.o-footer__main {
+    @include font-size(13,24);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.o-footer__nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: space(4);
+    list-style-type: none;
+
+    li:nth-last-child(n+2) {
+        margin-right: space(3);
+    }
+}
+
+
+.o-footer__social {
+    display: flex;
+    margin-left: auto;
+    margin-left: space(4);
+    list-style-type: none;
+
+    li:nth-last-child(n+2) {
+        margin-right: space(3);
+    }
+}
+
+
+.o-footer__link {
+    @include font-weight(bold);
+    text-decoration: none;
+    color: palette(purple, 500, 0.7);
+    transition: color 150ms linear;
+    
+    &:hover {
+        color: palette(green);
+    }
+}

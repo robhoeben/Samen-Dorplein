@@ -1,0 +1,14 @@
+.a-fade-enter-active {
+	transition: opacity 400ms linear;
+}
+
+
+.a-fade-leave-active {
+	transition: opacity 400ms linear;
+}
+
+
+.a-fade-enter,
+.a-fade-leave-to {
+	opacity: 0;
+}

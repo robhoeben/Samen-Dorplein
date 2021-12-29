@@ -1,0 +1,12 @@
+$spriteWidth: 70px;
+$spriteHeight: 30px;
+
+@mixin cookieSprite($position, $width: auto, $height: auto) {
+  $positionX: nth($position, 1) * -1;
+  $positionY: nth($position, 2) * -1;
+
+  background: url("/img/cookie-sprite.svg") $positionX $positionY no-repeat;
+  background-size: $spriteWidth $spriteHeight;
+  width: $width;
+  height: $height;
+}

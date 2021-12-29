@@ -1,0 +1,30 @@
+:root {
+	--g-bg-color:                #{palette(neutral,0)};
+	--g-text-color:              #{palette(neutral,800)};
+	--g-hamburger-color:         #{palette(purple,500)};
+	--g-footer-bg-color:         #{palette(purple,500)};
+
+	--g-header-height:           56px;
+	--g-logo-width:              187px;
+	--g-logo-height:             28px;
+
+	--g-container-gutter:        max(#{$site-gutter-min}, #{$site-gutter-max});
+	--g-container-grid:
+		[full-start]
+			minmax(var(--g-container-gutter), 1fr)
+
+			[main-start]
+				repeat(12, [col-start] minmax(0, #{$site-column-size * 1px}))
+			[main-end]
+
+			minmax(var(--g-container-gutter), 1fr)
+		[full-end];
+
+
+	// Set our custom properties on the :root element so we can use them everywhere
+	@each $level, $palette in $palettes {
+		@each $type, $color in $palette {
+			--color-#{$level}-#{$type}-hsl: #{derive-hsl-values($color)};
+		}
+	}
+}

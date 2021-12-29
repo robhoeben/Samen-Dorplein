@@ -1,0 +1,116 @@
+$l-form-element-min-width: 180px;
+
+
+// modifier for less spacing between rows
+.l-form--dense {
+	.l-form__row {
+		& + .l-form__row {
+			margin-top: space(1);
+		}
+	}
+}
+
+
+.l-form__title {
+	margin-top: space(-2);
+}
+
+
+.l-form__body {
+	// when it is not the first item we need some more spacing
+	// to offset from the title that likely precedes this
+	.l-form__header + & {
+		margin-top: space(2.5);
+	}
+}
+
+
+.l-form__row {
+	margin-top: space(3);
+	display: grid;
+	grid-gap: space(1);
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+
+	&[data-grid="5-5"] {
+		grid-template-columns: 5fr 5fr;
+	}
+
+	&[data-grid="7-3"] {
+		grid-template-columns: 7fr 3fr;
+	}
+
+	&[data-grid="3-7"] {
+		grid-template-columns: 3fr 7fr;
+	}
+
+	&[data-grid="4-2-4"] {
+		grid-template-columns: 4fr 2fr 4fr;
+	}
+
+	@include mq($max: $bp-form-switch) {
+		grid-template-columns: 100% !important;
+		grid-gap: space(3);
+	}
+}
+
+
+.l-form__footer {
+	margin-top: space(5);
+}
+
+
+// A hidden wrapper for honey pot stuff
+.l-form__pot {
+	opacity: 0;
+	position: absolute;
+	top: 0;	left: 0; height: 0; width: 0;
+	z-index: -1;
+}
+
+//
+//.l-form__row--grid {
+//	display: grid;
+//	//grid-column-gap: space(2);
+//
+//	&[data-grid-template-columns="3-2"] {
+//		grid-template-columns: 3fr 2fr;
+//	}
+//	&[data-grid-template-columns="2-3"] {
+//		grid-template-columns: 2fr 3fr;
+//	}
+//	&[data-grid-template-columns="3-1-1"] {
+//		grid-template-columns: 3fr 1fr 1fr;
+//	}
+//	&[data-grid-template-columns="1-1-3"] {
+//		grid-template-columns: 1fr 1fr 3fr;
+//	}
+//	&[data-grid-template-columns="2-1-2"] {
+//		grid-template-columns: 2fr 1fr 2fr;
+//	}
+//
+//	& > * {
+//		display: block; // In IE grid items can't be inline
+//		grid-row: 1;
+//
+//		// All but exclude the first
+//		&:nth-child(n+2) {
+//			margin-left: space(1);
+//		}
+//		// All but exclude the last
+//		&:nth-last-child(n+2) {
+//			margin-right: space(1);
+//		}
+//
+//
+//		&:nth-child(1) {
+//			grid-column: 1;
+//		}
+//		&:nth-child(2) {
+//			grid-column: 2;
+//		}
+//		&:nth-child(3) {
+//			grid-column: 3;
+//		}
+//	}
+//}

@@ -1,0 +1,6 @@
+.l-block {
+  // Top margin only on consecutive blocks
+  & + & {
+    margin-top: clamp(#{space(6)}, calc(#{space(5)} + 5vw), #{space(12)});
+  }
+}

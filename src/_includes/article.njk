@@ -1,0 +1,45 @@
+---
+layout: master.njk
+hidePageTitle: true
+---
+{% from "macros/button.njk" import button %}
+
+<div class="l-container-grid">
+    <div class="o-article">
+        
+        <div class="o-article__back">
+            {{ button(
+                label = 'Terug naar nieuwsoverzicht',
+                href = '/nieuws',
+                hasBackIcon = true,
+                isText = true
+            ) }}
+        </div>
+
+        <div class="o-article__title">
+            {% include 'pageTitle.njk' %}
+        </div>
+    
+        {% if intro %}
+            <div class="o-article__intro">
+                {{ intro | safe }}
+            </div>
+        {% endif %}
+
+        {% if image %}
+            <div class="u-image-wrapper  u-spacing-mt5">
+                {% image ["./src/img/", image] | join, '', '(min-width: 30em) 50vw, 100vw' %}    
+            </div>
+        {% endif %}
+
+        <div class="u-spacing-mt5  s-text">
+            {{ content | safe }}
+        </div>
+
+        {% if audioUrl %}
+            <audio class="u-spacing-mt3" controls="" src="{{ audioUrl }}"></audio>
+        {% endif %}
+
+        <time class="o-article__date">Geplaatst op: {{ date | postDate  }}<time>
+    </div>
+</div>

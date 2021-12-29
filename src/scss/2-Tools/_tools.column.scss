@@ -1,0 +1,38 @@
+/* ==========================================================================
+  Functions used in grid calculation
+  ========================================================================== */
+
+/**
+  * Return percentage based on amount of columns
+  * Use parent column size to adjust the origin
+  */
+@use "sass:math";
+
+@function calculateColumnSize($columnCount : 1, $origin : $site-columns) {
+  // Calculate the width for a single column on a full grid
+  $singleColumnSize: math.div(100, $site-columns);
+
+  // Get the origin size in percentage from the full grid
+  $originPercentage: math.div($origin, $site-columns) * 100;
+
+  // Calculate single column from new origin
+  $newSingleColumnSize: math.div($singleColumnSize, $originPercentage) * 100;
+
+  // Return amount of columns as percentage
+  @return ($newSingleColumnSize * $columnCount);
+}
+
+/**
+  * Default function for columns
+  * Return as percentage
+  */
+@function column($columnCount : 1, $origin : $site-columns) {
+  @return calculateColumnSize($columnCount, $origin) * 1%;
+}
+
+/**
+  * Return as viewport width
+  */
+@function columnVw($columnCount : 1, $origin : $site-columns) {
+  @return calculateColumnSize($columnCount, $origin) * 1vw;
+}
