@@ -4,3 +4,15 @@
     margin-left: 0;
     list-style: none;
 }
+
+
+.o-articles__title {
+    display: flex;
+    align-items: center;
+
+    i {
+        flex: none;
+        width: space(3);
+        margin-right: space(2);
+    }
+}

@@ -35,7 +35,7 @@
 	&.has-icon {
 		grid-template-areas: "text icon";
 		grid-template-columns: auto auto;
-		grid-column-gap: space(1);
+		grid-column-gap: space(2);
 
 		// When data attribute is set change direction
 		&[data-icon-pos="before"] {

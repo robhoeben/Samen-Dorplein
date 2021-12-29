@@ -1,19 +1,23 @@
 {% from "macros/button.njk" import button %}
 
-<div class="c-subtitle  u-spacing-mb2">Laatste nieuwsbericht</div>
-    <div class="o-articles">
+<div class="o-articles">
+    <div class="o-articles__title  c-subtitle">
+        <i>{% include 'svg/news.njk' %}</i>
+        <span>Laatste nieuwsbericht</span>
+    </div>
+    <div class="o-articles__list">
         {% for post in collections.nieuws | reverse %}
             {% if loop.index0 < 1 %}
                 {% include 'articleCard.njk' %}
             {% endif %}
         {% endfor %}
     </div>
-    <div>
-        {{ button(
-            label = 'Meer nieuws',
-            href = '/nieuws',
-            hasIcon = true,
-            isText = true
-        ) }}
-    </div>
+</div>
+<div>
+    {{ button(
+        label = 'Meer nieuws',
+        href = '/nieuws',
+        hasIcon = true,
+        isText = true
+    ) }}
 </div>

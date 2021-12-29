@@ -1,12 +1,13 @@
 ---
 layout: master.njk
+masterTitle: Nieuws
 hidePageTitle: true
 ---
 {% from "macros/button.njk" import button %}
 
 <div class="l-container-grid">
     <div class="o-article">
-        
+
         <div class="o-article__back">
             {{ button(
                 label = 'Terug naar nieuwsoverzicht',
@@ -19,7 +20,7 @@ hidePageTitle: true
         <div class="o-article__title">
             {% include 'pageTitle.njk' %}
         </div>
-    
+
         {% if intro %}
             <div class="o-article__intro">
                 {{ intro | safe }}
@@ -28,7 +29,7 @@ hidePageTitle: true
 
         {% if image %}
             <div class="u-image-wrapper  u-spacing-mt5">
-                {% image ["./src/img/", image] | join, '', '(min-width: 30em) 50vw, 100vw' %}    
+                {% image ["./src/img/", image] | join, '', '(min-width: 30em) 50vw, 100vw' %}
             </div>
         {% endif %}
 

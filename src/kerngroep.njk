@@ -1,19 +1,20 @@
 ---
 layout: master.njk
 title: Kerngroep
+subtitle: Wij stellen ons graag aan je voor
 eleventyNavigation:
     key: Kerngroep
     parent: Over ons
 ---
-    
-<div class="l-container-grid">    
+
+<div class="l-container-grid">
 
     <ul class="o-team">
     {% for person in kerngroep.persons %}
         <li class="o-team__item">
             <div class="o-team__square"><span></span></div>
             <div class="o-team__photo">
-                {% image ["./src/img/kerngroep/", person.image] | join, person.name, '(min-width: 30em) 50vw, 100vw' %}    
+                {% image ["./src/img/kerngroep/", person.image] | join, person.name, '(min-width: 30em) 50vw, 100vw' %}
             </div>
             <div class="o-team__content">
                 <p>

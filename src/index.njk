@@ -1,10 +1,12 @@
 ---
 layout: master.njk
 hidePageTitle: true
+metaTitle: Home
 title: Samen Dorplein
 subtitle: Samen werken aan een toekomstbestendig Dorplein
 eleventyNavigation:
     key: Home
+    order: 0
 ---
 
 {% from "macros/button.njk" import button %}
@@ -18,7 +20,7 @@ eleventyNavigation:
                 <p>Hoe denken wij, als inwoners, over de toekomst van ons dorp en wat hebben we daarvoor nodig? Die vraag gaan we samen met jou de komende tijd beantwoorden. We willen samen werken aan een toekomstbestendig Dorplein waarin we samen wonen en samen plezier hebben.</p>
 
                 {{ button(
-                    label = 'Wie zijn wij',
+                    label = 'Wie zijn wij en wat gaan we doen?',
                     href = '/over-ons',
                     hasIcon = true,
                     isGhost = true
@@ -32,7 +34,6 @@ eleventyNavigation:
 
 
     <hr class="u-spacing-mt8 u-spacing-mb8">
-
 
     {% include "latestNews.njk" %}
 

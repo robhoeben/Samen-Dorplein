@@ -1,6 +1,6 @@
 .o-article {
     @include restrict(2);
-    
+
 }
 
 .o-article__back {
@@ -14,10 +14,7 @@
     margin-bottom: space(3);
     padding-bottom: space(4);
     border-bottom: 1px solid palette(purple, 300, 0.4);
-    // background-color: palette(purple, 500);
-    // box-shadow: 0 0 0 4px var(--g-bg-color), 0 0 0 6px palette(purple);
     color: palette(purple, 500);
-    // @include border-radius(l);
 }
 
 
