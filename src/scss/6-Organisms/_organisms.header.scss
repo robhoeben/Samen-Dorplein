@@ -1,5 +1,5 @@
 
-.o-header {    
+.o-header {
     --bg-color: #{palette(neutral, 0)};
     --border-color: #{palette(purple)};
     --border-size: clamp(16px, 1.8vw, 24px);
@@ -7,7 +7,7 @@
     --ratio: 5.57;
 
     @include container-grid;
-    background-color: var(--bg-color); 
+    background-color: var(--bg-color);
     position: relative;
     margin-bottom: space(3);
     // box-shadow: 0 0 24px -16px palette(purple, 600);
@@ -25,7 +25,7 @@
         border-radius: 0 0 4px 0;
     }
 
-    &::after { 
+    &::after {
         --border-color: #{palette(green)};
 
         grid-column: main-end / full-end;
@@ -63,12 +63,12 @@
         background-repeat: no-repeat;
         background-position: var(--border-size) 0;
     }
-    
+
 }
 
 
 .o-header__logo {
-    transition: opacity 150ms linear; 
+    transition: opacity 150ms linear;
 
     img {
         height: space(12);
@@ -82,6 +82,11 @@
 
 
 .o-header__nav {
+    // display: none;
     margin-left: space(2);
     align-self: end;
+
+    @include mq($bp-header-switch){
+        // display: block;
+    }
 }
