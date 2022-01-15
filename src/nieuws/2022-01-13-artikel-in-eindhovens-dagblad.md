@@ -2,7 +2,7 @@
 layout: article.njk
 title: Artikel in ED
 subtitle: Over aankomende enquête voor Dorpleiners
-intro: Op 13 januari verscheen er een artikel in het Eindhovens Dagblad over de aankomende enquête die op 22 januari door Samen Dorplein deur aan deur verspreid zal worden. Hieronder staat dit artikel van Ron de Leijer die hiervoor Theo Dubbeld interviewde.
+intro: Op 13 januari verscheen er een artikel in het Eindhovens Dagblad over de aankomende enquête die op 22 januari door Samen Dorplein deur aan deur verspreid zal worden. Hieronder staat dit artikel van Roy de Leijer die hiervoor Theo Dubbeld interviewde.
 date: 2022-01-13
 ---
 
