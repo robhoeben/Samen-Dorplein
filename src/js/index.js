@@ -1,1 +1,0 @@
-console.info('Wie kijkt hier eigenlijk? Ben je ergens naar op zoek?');
