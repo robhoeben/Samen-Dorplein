@@ -10,15 +10,14 @@
 	}
 
 	// First the owl selector for setting a default vertical rhythm
-	& > p + p,
-	& > * + h2,
-	& > * + h3,
-	& > * + h4 {
-		margin-top: clamp(#{space(2)}, calc(#{space(1)} + 4vw), #{space(3)});
+	& > * + * {
+		margin-top: clamp(#{space(2)}, calc(#{space(1)} + 4vw), #{space(4)});
 	}
 
-	& > * + a {
-		margin-top: clamp(#{space(3)}, calc(#{space(2)} + 4vw), #{space(5)});
+	& > h3 + p,
+	& > h4 + p,
+	& > h5 + * {
+		margin-top: 0;
 	}
 
 	// Make sure first item in scoped text has no margin on top

@@ -3,11 +3,11 @@
 <div class="o-articles">
     <div class="o-articles__title  c-subtitle">
         <i>{% include 'svg/news.njk' %}</i>
-        <span>Laatste nieuwsbericht</span>
+        <span>Laatste nieuws</span>
     </div>
     <div class="o-articles__list">
         {% for post in collections.nieuws | reverse %}
-            {% if loop.index0 < 1 %}
+            {% if loop.index0 < 3 %}
                 {% include 'articleCard.njk' %}
             {% endif %}
         {% endfor %}
