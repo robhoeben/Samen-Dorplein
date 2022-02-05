@@ -4,7 +4,7 @@ const Image = require("@11ty/eleventy-img");
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
-    widths: [300, 600],
+    widths: [300, 752],
     formats: ["jpeg"],
     urlPath: "/img/",
     outputDir: "./public/img/",
@@ -23,8 +23,8 @@ async function imageShortcode(src, alt, sizes) {
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);  
+
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/audio");
@@ -43,7 +43,7 @@ module.exports = function(eleventyConfig) {
     const { label = '' } = options;
     const { href = '' } = options;
     const { classes = '' } = options;
-    
+
     return `<a class="c-button ${classes}" href="${href}">
       <span class="c-button__text">
         ${label}
