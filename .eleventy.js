@@ -1,4 +1,6 @@
 const { DateTime } = require('luxon');
+const now = DateTime.now();
+var yesterday = now.minus({ days: 1 });
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
 
@@ -35,8 +37,8 @@ module.exports = function(eleventyConfig) {
     open: true,
   });
 
-  eleventyConfig.addFilter("postDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  eleventyConfig.addFilter("displayDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).setLocale('nl').toLocaleString(DateTime.DATE_MED);
   });
 
   eleventyConfig.addPairedShortcode('button', function(icon, options = {}) {
@@ -51,6 +53,19 @@ module.exports = function(eleventyConfig) {
       ${icon ?? `<span class="c-button__icon">${icon}</span>`}
     </a>`;
   })
+
+  // future
+  eleventyConfig.addCollection("futureMeetings", function(collection) {
+    return collection.getFilteredByGlob("./src/overleg/*.md").filter((item) => {
+      return DateTime.fromJSDate(item.date) >= yesterday;
+    });
+  });
+  // old
+  eleventyConfig.addCollection("oldMeetings", function(collection) {
+    return collection.getFilteredByGlob("./src/overleg/*.md").filter((item) => {
+      return DateTime.fromJSDate(item.date) < yesterday;
+    });
+  });
 
 
   // Set custom directories for input, output, includes, and data

@@ -289,7 +289,7 @@
 	@include border-radius($border-radius);
 	padding: space(3);
 	background-color: palette(neutral, 0);
-	box-shadow: 0 8px 24px 0 rgba(1,23,102,0.04);
+	box-shadow: 0 8px 24px 0 rgba(1,23,102,var(--box-shadow-opacity, 0.04));
 }
 
 

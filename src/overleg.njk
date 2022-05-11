@@ -1,0 +1,38 @@
+---
+layout: master.njk
+title: Overleg
+subtitle: Agendapunten en overlegmomenten
+eleventyNavigation:
+    key: Overleg
+    order: 3
+---
+
+<div class="l-container-grid  u-spacing-pt4">
+    <div class="c-dates">
+        <h3 class="c-dates__title">Gepland overleg</h2>
+        <ul class="c-dates__list">
+            {% for meeting in collections.futureMeetings | reverse %}
+                <li class="c-dates__item">
+                    <div class="c-meeting">
+                        <time class="c-meeting__date">{{ meeting.date | displayDate }}</time>
+                        <div class="c-meeting__content">{{ meeting.templateContent | safe }}</div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="c-dates  u-spacing-mt7">
+        <h3 class="c-dates__title">Overleg historie</h2>
+        <ul class="u-clean-list">
+            {% for meeting in collections.oldMeetings | reverse %}
+                <li class="c-dates__item">
+                    <div class="c-meeting">
+                        <time class="c-meeting__date">{{ meeting.date | displayDate }}</time>
+                        <div class="c-meeting__content">{{ meeting.templateContent | safe }}</div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
