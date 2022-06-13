@@ -1,6 +1,52 @@
-// .c-meeting {}
+.c-meeting {
+    --date-color: #{palette(purple, 500)};
+
+    &.has-toggle {
+        cursor: pointer;
+        transition: color 150ms;
+
+        &:hover {
+            --date-color: #{palette(green, 500)};
+        }
+    }
+}
+
+
+.c-meeting__heading {
+    display: inline-flex;
+    gap: space(1);
+    color: var(--date-color);
+}
+
 
 .c-meeting__date {
     font-weight: bold;
-    color: palette(purple, 500);
+    color: var(--date-color);
+}
+
+
+.c-meeting__content {
+    margin-top: space(1);
+    margin-bottom: space(2);
+
+    & ul {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    & li {
+        display: flex;
+        align-items: center;
+
+        &:before {
+            content: "";
+            margin-right: space(1);
+            font-size: 0.8em;
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            background-color: #35b882;
+            border-radius: 4px;
+        }
+    }
 }

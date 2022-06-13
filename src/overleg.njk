@@ -11,10 +11,15 @@ eleventyNavigation:
     <div class="c-dates">
         <h3 class="c-dates__title">Gepland overleg</h2>
         <ul class="c-dates__list">
-            {% for meeting in collections.futureMeetings | reverse %}
+            {% for meeting in collections.futureMeetings %}
                 <li class="c-dates__item">
                     <div class="c-meeting">
-                        <time class="c-meeting__date">{{ meeting.date | displayDate }}</time>
+                        <div class="c-meeting__heading">
+                            <time class="c-meeting__date">{{ meeting.date | displayDate }}</time>
+                            {% if meeting.data.location %}
+                            <p>- {{meeting.data.location}}</p>
+                            {% endif %}
+                        </div>
                         <div class="c-meeting__content">{{ meeting.templateContent | safe }}</div>
                     </div>
                 </li>
@@ -24,13 +29,18 @@ eleventyNavigation:
 
     <div class="c-dates  u-spacing-mt7">
         <h3 class="c-dates__title">Overleg historie</h2>
-        <ul class="u-clean-list">
+        <ul class="c-dates__list">
             {% for meeting in collections.oldMeetings | reverse %}
                 <li class="c-dates__item">
-                    <div class="c-meeting">
-                        <time class="c-meeting__date">{{ meeting.date | displayDate }}</time>
+                    <details class="c-meeting  has-toggle">
+                        <summary class="c-meeting__heading">
+                            <time class="c-meeting__date">{{ meeting.date | displayDate }}</time>
+                            {% if meeting.data.location %}
+                            <p>- {{meeting.data.location}}</p>
+                            {% endif %}
+                        </summary>
                         <div class="c-meeting__content">{{ meeting.templateContent | safe }}</div>
-                    </div>
+                    </details>
                 </li>
             {% endfor %}
         </ul>
