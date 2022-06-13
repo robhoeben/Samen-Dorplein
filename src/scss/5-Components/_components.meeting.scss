@@ -16,6 +16,18 @@
     display: inline-flex;
     gap: space(1);
     color: var(--date-color);
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &::marker {
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }
 
 
@@ -36,10 +48,12 @@
 
     & li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
 
         &:before {
             content: "";
+            flex: none;
+            margin-top: 10px;
             margin-right: space(1);
             font-size: 0.8em;
             width: 6px;
