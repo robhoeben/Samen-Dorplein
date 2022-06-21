@@ -7,7 +7,7 @@ date: 2022-06-21
 
 We kijken terug op een geslaagde avond, met 76 dorpsgenoten, die nieuwsgierig waren naar de resultaten. We bedanken onze vrijwilligers en sponsoren, die deze avond mede tot een succes hebben gemaakt.
 
-Voor vragen n.a.v. de presentatie of het aanmelden aan de vervolgbijeenkomsten rondom één of meerdere thema's, kun je mailen naar [info@samendorplein.nl](mailto:info@samendorplein.nl) of zoek gerust persoonlijk contact op met één van ons.
+Voor vragen n.a.v. de presentatie of het aanmelden voor deelname aan de vervolgbijeenkomsten rondom één of meerdere thema's, kun je mailen naar [info@samendorplein.nl](mailto:info@samendorplein.nl) of zoek gerust persoonlijk contact op met [één van ons](/over-ons).
 
 <ul>
     <li>Download <a href="/docs/enquete_samen_dorplein.pdf" download>de enquête</a>
